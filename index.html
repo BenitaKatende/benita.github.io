@@ -9,7 +9,64 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="aure.css">
   <style>
+  @media only screen and (min-width : 800px) {
+
+    .mycontainer p {color: black;}
+
+    .phone {display: none; color: black;}
+
+    .max {width:1000px;margin: 0 auto;}
+
+    .mycontainer h2 {color: black;}
+
+    .hideme {opacity:0;}
+
+
+  }
+  @media only screen and (max-width: 800px){
+
+    .mycontainer:nth-child(even) {background-color: #d9d9d9;}
+
+    .mycontainer p {text-align: center;color: black;font-size: 18px;}
+
+    .mycontainer h2 {color: black;}
+
+    .row {display: none; color: black;}
+
+    .max {max-width: 300px;margin: 0 auto}
+
+    .hideme {opacity:0;}
+  }
   </style>
+  <script>
+$(function(){  // $(document).ready shorthand
+$('.monster').fadeIn('slow');
+});
+
+$(document).ready(function() {
+
+  /* Every time the window is scrolled ... */
+  $(window).scroll( function(){
+
+      /* Check the location of each desired element */
+      $('.hideme').each( function(i){
+
+          var bottom_of_object = $(this).position().top + $(this).outerHeight();
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window > bottom_of_object ){
+
+              $(this).animate({'opacity':'1'},1500);
+
+          }
+
+      });
+
+  });
+
+});
+</script>
 </head>
 <body>
   <div id="header">
@@ -21,13 +78,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">BK Designs</a>
+          <a class="navbar-brand" href="#" style="color: white;">BK Designs</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="team.html" style="">Collaborations</a></li>
-            <li><a href="actions.html">Send Inquiery</a></li>
+            <li><a href="index.html" style="color: white;">Home</a></li>
+            <li><a href="collab.html" style="color: white;">Collaborations</a></li>
+            <li><a href="form.php" style="color: white;">Send Inquiery</a></li>
           </ul>
         </div>
       </div>
@@ -36,10 +93,120 @@
 <div id="content">
   <div class="landing" style="position:relative;text-align:center;color:white;">
       <picture>
-      <source media="(max-width:799px)" srcset="handsclose.jpeg">
+      <source media="(max-width:799px)" srcset="fbbannerblack.pdf">
       <source media="(min-width:800px)" srcset="fbbannerblack.pdf">
         <img src="hands.jpeg" style="display: block;width:100%;height:500px;margin-left:auto;margin-right:auto;margin-top:-20px;">
       </picture>
+    </div>
+<div class="phone">
+  <div class="mycontainer">
+    <div class="max">
+      <br>
+      <img src="whoisshe.png" class="hideme" style="height: 100px; width: 100px; display: block; margin-left: auto; margin-right: auto;">
+      <h2 style="text-align:center;">Who I Am</h2>
+      <p style="text-align:center;">I am a 24 years old freelance front-end webdeveloper and webdesigner. This passion
+      arised from self-intrest in IT and a wellingness to learn. Besides my passion in IT, I also own a Bachelor in Tax and
+      Accounting and a Masters in Management.</p>
+    </div>
+    <br>
+  </div>
+    <div class="mycontainer">
+      <div class="max">
+        <br>
+        <img src="whatido.png" class="hideme" style="height: 100px; width: 100px; display: block; margin-left: auto; margin-right: auto;">
+        <h2 style="text-align:center;">What I do</h2>
+        <p style="text-align:center;">I have been developing websites for the past 2 years and designing logo's and arts for businesses or
+          other freelances. I dedicate myself 100% to every work I do and my motto is that there is always a solution. </p>
+    </div>
+    <br>
+  </div>
+  <div class="mycontainer">
+    <div class="max">
+      <br>
+      <img src="achieve.png" class="hideme" style="height: 90px; width: 310px;display: block; margin-left: auto; margin-right: auto;">
+      <p style="text-align:center;">If you are intrested in my work and would like to contact me for plausible collaboration
+        in the future, you can do this by clicking on the the "Send Inquiry" button in the menu bar.</p>
+    </div>
 </div>
-
+</div>
+<div class="mycontainer">
+  <br>
+  <br>
+  <div class="row">
+    <div class="max">
+    <div class="col-sm-3 col-md-6" style="background-color:white;">
+      <h2 style="text-align:center;margin-bottom:35px;">Who I Am</i></h2>
+      <p style="text-align:center;">I am a 24 years old freelance front-end webdeveloper and webdesigner. This passion
+      arised from self-intrest in IT and a wellingness to learn. Besides my passion in IT, I also own a Bachelor in Tax and
+      Accounting and a Masters in Management. </p>
+      <br>
+      <br>
+      <img class="hideme" src="whoisshe.png" style="display: block; margin-left: auto; margin-right: auto;">
+    </div>
+    <div class="col-sm-9 col-md-6" style="background-color:white;">
+        <h2 style="text-align:center;">What I do</i></h2>
+        <br>
+        <p style="text-align:center;">I have been developing websites for the past 2 years and designing logo's and arts for businesses or
+          other freelances. I dedicate myself 100% to every work I do and my motto is that there is always a solution. </p>
+          <br>
+          <br>
+        <img class="hideme" src="whatido.png" style="display: block; margin-left: auto; margin-right: auto;">
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class ="row">
+  <div class="max">
+    <br>
+    <div class="col-sm-4"><img class="hideme" src=""></div>
+    <div class="col-sm-4" style=""></div>
+    <div class="col-sm-4"><img class="hideme" src=""></div>
+    </div>
+  </div>
+  <div class ="row">
+    <div class="max">
+      <div class="col-sm-4"><img class="hideme" src=""></div>
+      <div class="col-sm-4"><img src="achieve.png" style="display: block;margin-left:-90px;"</div>
+      <div class="col-sm-4"><img class="hideme" src=""></div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class ="row">
+      <div class="max">
+        <div class="col-sm-4"><img class="hideme" src=""></div>
+        <div class="col-sm-4" style="text-align:center;"><p style="text-align:center;">If you are intrested in my work and would like to contact me for plausible collaboration
+          in the future, you can do this by clicking on the the "Send Inquiry" button in the menu bar.</p></div>
+        <div class="col-sm-4"><img class="hideme" src=""></div>
+        </div>
+      </div>
+</div>
+</div>
 </body>
+<div id="footer" style="background-color:#808080;">
+  <div class="container">
+     <div class="row-fluid">
+       <div class="ubuntu">
+         <div class="span8" style="margin-top:2vw;">
+        </div>
+      </div>
+
+      <div class="span4" style="color:white;">
+      <h2>Nunatu Asbl</h2>
+      <address>
+        <strong>Nunatu, la compassion en action</strong><br>
+        Boulevard des invalides 183/12<br>
+        1160 Bruxelles<br>
+        Belgique<br>
+        &#9742 +32489 93 95 66<br>
+      </address>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
